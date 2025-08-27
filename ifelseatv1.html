@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio Final Dev Web</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" id="text.css" href="css/inicio.css">
+    <link rel="stylesheet" href="css/styleexecut.css">
 </head>
 <body>
 
@@ -14,9 +14,9 @@
             <li><a href="telainicial.html">Tela Inicial</a></li>
             <li><a href="index.html">Início</a></li>
             
-            <li class="item-submenu">
+            <li class="item-submenu aberto">
                 <a href="#">Condicionais</a>
-                <ul class="sub-menu">
+                <ul class="sub-menu" style="max-height: 200px;">
                     <li><a href="condifelse.html">if()... else</a></li>
                     <li><a href="#switch-case">switch()... case</a></li>
                 </ul>
@@ -36,13 +36,38 @@
         </ul>
     </nav>
 
-    <section id="inicio">
-        <h1>Início</h1>
-        <p>Este site está sendo desenvolvido com o objetivo de colocar a prova tudo o que viemos<br> aprendendo nesse curso até aqui.
-            No desafio final do Desenvolvimento Web Front-end,<br> veremos nossos conhecimetos aplicados em HTML, CSS e JavaScript através<br>
-            de um sistema onde deixaremos nossos códigos salvos dentro do nosso programa <br> nos permitindo executa-los dentro do próprio site! 
+    <main class="conteudo-principal">
+        <h1>if()... else</h1>
+        <h2>Exemplo</h2>
+
+        <p class="enunciado">
+            Enunciado do código texto texto texto texto texto texto texto texto texto texto 
+            texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
+            texto texto texto texto texto texto.
         </p>
-    </section>
+
+        <div class="container-editor">
+            <textarea id="codigoInput"><!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Teste</title>
+</head>
+<body>
+    <h1>Teste de Código</h1>
+    <script>
+        let hora = new Date().getHours();
+        if (hora < 12) {
+            document.write("Bom dia!");
+        } else {
+            document.write("Boa tarde ou boa noite!");
+        }
+    </script>
+</body>
+</html></textarea>
+            <button id="executarBtn">Executar Código</button>
+        </div>
+    </main>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
