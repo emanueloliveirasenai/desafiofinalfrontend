@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Final Dev Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleexecut.css">
+</head>
+<body>
+
+    <nav class="menu-lateral">
+        <ul>
+            <li><a href="telainicial.html">Tela Inicial</a></li>
+            <li><a href="index.html">Início</a></li>
+            
+            <li class="item-submenu">
+                <a href="#">Condicionais</a>
+                <ul class="sub-menu">
+                    <li><a href="condifelse.html">if()... else</a></li>
+                    <li><a href="condswitchcase.html">switch()... case</a></li>
+                </ul>
+            </li>
+
+            <li class="item-submenu">
+                <a href="#">Repetição</a>
+                <ul class="sub-menu">
+                    <li><a href="repetwhile.html">while</a></li>
+                    <li><a href="repetdowhile.html">do... while</a></li>
+                    <li><a href="repetfor.html">for</a></li>
+                </ul>
+            </li>
+
+            <li><a href="vetor.html">Vetor</a></li>
+            <li><a href="matriz.html">Matriz</a></li>
+        </ul>
+    </nav>
+
+    <main class="conteudo-principal">
+        <h1>While</h1>
+        <h2>Exemplo</h2>
+
+        <p class="enunciado">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptates perspiciatis optio quae accusamus facere sint a laboriosam temporibus provident ex neque, totam dolorum ipsa unde voluptatibus distinctio dignissimos iusto.
+        </p>
+
+        <div class="container-editor">
+
+            <textarea id="codigoInput">
+
+                <!DOCTYPE html>
+                <html lang="PT-BR">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Atividade 1</title>
+                    <style>
+                        /*Configurações Gerais*/
+                section{
+                    margin-top: 0px auto;
+
+                }
+
+                /*Configurações da página*/
+                body{
+                    background-color: #0abab5;
+                    color: black;
+                }
+                .cadinteiro {
+                    width: 300px;
+                    margin: 0px auto;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                .cadinteiro input{
+                    margin: 5px;
+                    width: 100%;
+                    padding: 5px 0;
+                    background-color: #66cdaa;
+                }
+                .cadinteiro button{
+                    width: 30%;
+                    margin: 0 10%;
+                    background-color: #b1ccf5;
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+
+                .resultado{
+                    width: 300px;
+                    margin: 0px auto;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+
+
+
+                button:hover{
+                    background-color: aliceblue;
+                }
+                label{
+                    float: left;
+                }
+                h2{
+                    text-align: center;
+                    margin-top: 0px;
+                    margin-bottom: 10px;
+                    font-size: 50px;
+                }
+                    </style>
+                </head>
+                <body>
+                    <section>
+                        <h2>Exemplo - Exibe_inteiros de 1 a 10</h2>
+                        <font face="arial">
+                            <form name="frmnuimint" action="#" method="get" onsubmit="return validaProc()">
+                                <fieldset class="cadinteiro">
+
+                                    <legend>Entrada de dados</legend>
+                                    <br>
+                                    <button type="submit">Enviar</button>
+                                </fieldset>
+                            </form>
+                        </font>
+                    </section>
+                    <script>
+                        function validaProc(){
+                    
+                    let i=1;
+                    while(i<=10){
+                        
+                        console.log("Passando na estrutura a " + i + "ª vez o valor de i é: " + i);
+                        i++;
+                    }
+                    return false;
+                }
+                    </script>
+                </body>
+                </html>
+
+            </textarea>
+
+            <button id="executarBtn">Executar Código</button>
+        </div>
+    </main>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

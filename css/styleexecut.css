@@ -116,6 +116,7 @@ body::before {
     max-width: 800px;
 }
 
+
 .container-editor {
     display: flex;
     align-items: flex-start;

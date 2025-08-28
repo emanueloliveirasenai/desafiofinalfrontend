@@ -38,7 +38,7 @@
 
     <main class="conteudo-principal">
         <h1>if()... else</h1>
-        <h2>Atividade 1</h2>
+        <h2>Atividade 2</h2>
 
         <p class="enunciado">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptates perspiciatis optio quae accusamus facere sint a laboriosam temporibus provident ex neque, totam dolorum ipsa unde voluptatibus distinctio dignissimos iusto.
@@ -49,126 +49,110 @@
             <textarea id="codigoInput">
 
                 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Estrutura SE JavaScript</title>
-    
+    <title>Atividades 2</title>
     <style>
         /*Configurações Gerais*/
-section{
-    margin-top: 0px auto;
-}
-body{
-    background-color: #0abab5;
-    color: black;
-}
-.cadmedialuno1{
-    width: 300px;
-    margin: 0px auto;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.cadmedialuno1 input{
-    margin: 5px;
-    width: 100%;
-    padding: 5px 0;
-    background-color: #66cdaa;
-}
-.cadmedialuno1 button{
-    width: 30%;
-    margin: 0 10%;
-    background-color: #b1ccf5;
-    font-weight: bold;
-    font-size: 16px;
-}
-button:hover{
-    background-color: aliceblue;
-}
-label{
-    float: left;
-}
-h2{
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-size: 50px;
-}
+        section{
+            margin-top: 0px auto;
+
+        }
+
+        /*Configurações da página*/
+        body{
+            background-color: #0abab5;
+            color: black;
+        }
+        .atv2Valid{
+            width: 300px;
+            margin: 0px auto;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .atv2Valid input{
+            margin: 5px;
+            width: 100%;
+            padding: 5px 0;
+            background-color: #66cdaa;
+        }
+        .atv2Valid button{
+            width: 30%;
+            margin: 0 10%;
+            background-color: #b1ccf5;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        button:hover{
+            background-color: aliceblue;
+        }
+        label{
+            float: left;
+        }
+        h2{
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 50px;
+        }
     </style>
 </head>
-
 <body>
     <section>
-        <h2>Atividade - Cálculo média de aluno - Estrutura condicional "se"(if)</h2>
+        <h2>Estrutura "se" / "senao", Leitura de números</h2>
         <font face="arial">
-
-            <form name="frmnotas" action="#" method="get" onsubmit="return procFormulario()">
-
-                <fieldset class="cadmedialuno1">
-
-                    <legend>Entrada de Dados:</legend>
+            <form name="frmatv2" action="#" method="get" onsubmit="return validNum()">
+                <fieldset class="atv2Valid">
+                    <legend>Entrada de dados:</legend>
                     <br>
-                    <label for="num1">Nota 1:</label>
+                    <label for="num1">Digite o 1º número:</label>
                     <input type="text" name="txtnum1" id="num1">
                     <br><br>
-                    <label for="num2">Nota 2:</label>
+                    <label for="num2">Digite o 2º número:</label>
                     <input type="text" name="txtnum2" id="num2">
-                    <br><br>
-                    <label for="num3">Nota 3:</label>
-                    <input type="text" name="txtnum3" id="num3">
                     <br>
-                    <button type="reset">Limpar</button><button type="submit">Enviar</buttom>
-
+                    <button type="reset">Limpar</button><button type="submit">Enviar</button>
                 </fieldset>
-
             </form>
-
         </font>
-
-
-
     </section>
+
     <script>
-        function procFormulario(){
+        function validNum(){
+    if(document.frmatv2.txtnum1.value == ""){
 
-    //Validação de campos
-    if(document.frmnotas.txtnum1.value == ""){
-
-        alert("Preencha o campo Nota 1:");
-        document.frmnotas.txtnum1.focus();
+        alert("Preencha o campo 1:")
+        document.frmatv2.txtnum1.focus();
         return false;
 
-    }else if(document.frmnotas.txtnum2.value == ""){
+    }else if(document.frmatv2.txtnum2.value == ""){
 
-        alert("Preencha o campo Nota 2:")
-        document.frmnotas.txtnum2.focus();
-        return false;
-
-    }else if(document.frmnotas.txtnum3.value == ""){
-
-        alert("Preencha o campo Notas 3:");
-        document.frmnotas.txtnum3.focus();
+        alert("Preencha o campo 2:");
+        document.frmatv2.txtnum2.focus();
         return false;
 
     }else{
-        let nota1 = parseFloat(document.getElementById('num1').value);
-        let nota2 = parseFloat(document.getElementById('num2').value);
-        let nota3 = parseFloat(document.getElementById('num3').value);
-        let media =(nota1+nota2+nota3)/3;
-        if(media>=7){
+        
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
 
-            alert("Sua média foi: " + media.toFixed(2) + "\nVocê foi Aprovado!!!");
+        if(num1 > num2){
 
-        }else if(media <= 5){
-            
-            alert("Sua média foi: " + media.toFixed(2) + "\nVocê foi Reprovado!!!")
+            alert("Número 1 é maior que Número 2!");
+
+        }else if(num1 < num2){
+
+            alert("Número 1 é menor que Número 2!");
 
         }else{
-            alert("Sua média foi: " + media.toFixed(2) + "\nVocê está em Recuperação!!!")
+
+            alert("Os números 1 e 2 são iguais!")
+            
         }
     }
-
 }
+
     </script>
 </body>
 </html>
