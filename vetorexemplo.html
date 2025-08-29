@@ -37,11 +37,11 @@
     </nav>
 
     <main class="conteudo-principal">
-        <h1>For()</h1>
-        <h2>Atividade 1</h2>
+        <h1>Vetor Unidimensional</h1>
+        <h2>Exemplo</h2>
 
         <p class="enunciado">
-            Faça uma tabuada com a estrutura for()...
+            Armazene 3 números inteiros em um vetor!
         </p>
 
         <div class="container-editor">
@@ -49,10 +49,11 @@
             <textarea id="codigoInput">
 
                 <!DOCTYPE html>
-                <html lang="pt-br">
+                <html lang="PT-BR">
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Exemplo</title>
                     <style>
                         /*Configurações Gerais*/
                 section{
@@ -65,19 +66,19 @@
                     background-color: #0abab5;
                     color: black;
                 }
-                .tabuada {
+                .cadinteiro {
                     width: 300px;
                     margin: 0px auto;
                     font-weight: bold;
                     margin-bottom: 10px;
                 }
-                .tabuada input{
+                .cadinteiro input{
                     margin: 5px;
                     width: 100%;
                     padding: 5px 0;
                     background-color: #66cdaa;
                 }
-                .tabuada button{
+                .cadinteiro button{
                     width: 30%;
                     margin: 0 10%;
                     background-color: #b1ccf5;
@@ -107,50 +108,34 @@
                     font-size: 50px;
                 }
                     </style>
-                    <title>Estrutura para faca(for())</title>
                 </head>
                 <body>
                     <section>
-
-                        <h2>Atividade 1 - Tabuada - Estrutura "para"... for()</h2>
+                        <h2>Exemplo - Uso de Vetor Unidimensional</h2>
                         <font face="arial">
-
-                            <form name="frmnumint" action="#" method="get" onsubmit="return validaProc()">
-                                <fieldset class="tabuada">
-
-                                    <legend>Entrada de Dados:</legend>
+                            <form name="frmnumint" id="#" method="get" onsubmit="return validaProc()">
+                                <fieldset class="cadinteiro">
+                                    <legend>Entrada de dados</legend>
                                     <br>
-                                    <label for="numint">Número:</label>
-                                    <input type="text" id="numint" name="numint">
-                                    <button type="submit">Enviar</button><button type="reset">Limpar</button>
+                                    <button type="submit">Enviar</button>
                                 </fieldset>
-
-
-                            <!-- <fieldset class="resultado">
-                                    <legend>Resultado:</legend>
-                                    <label id="resultado"></label>
-                                </fieldset> -->
                             </form>
                         </font>
-                        
                     </section>
                     <script>
-                        function validaProc(){
+                        /*Armazene 3 números inteiros em um vetor.*/
+                function validaProc(){
 
-                    if(document.getElementById('numint').value == ""){
-                        alert("Preencha o campo Número:");
-                        document.frmnumint.numint.focus();
-                        return false;
-                    }else{
+                let num=[];
 
-                        let numint=parseInt(document.getElementById('numint').value);
-                        for(let i=0; i<11; i++){
-                            console.log(numint, " x ", i,  "=" , numint * i);
+                for(let i = 0; i < 3; i++){
+                    num[i] = parseInt(prompt("Digite o " + (i+1) + "º número na posição " + i));
+                }
+                for(i = 0; i < 3; i++){
+                    console.log("O valor do vetor num na posição " + i + " é: " + num[i]);
+                }
 
-                        //    document.getElementById('resultado').innerText = (numint + " x " + i +  "=" + (numint * i));
-                        }
-                        return false;
-                    }
+                return false;
                 }
                     </script>
                 </body>

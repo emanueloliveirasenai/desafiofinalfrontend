@@ -41,14 +41,99 @@
         <h2>Exemplo</h2>
 
         <p class="enunciado">
-            
+            Escreva um algorítmo que exiba números inteiros com a estrutura for()...
         </p>
 
         <div class="container-editor">
 
             <textarea id="codigoInput">
 
-            
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Estrutura Replicação para...faca()</title>
+                <style>
+                    /*Configurações Gerais*/
+            section{
+                margin-top: 0px auto;
+
+            }
+
+            /*Configurações da página*/
+            body{
+                background-color: #0abab5;
+                color: black;
+            }
+            .cadinteiro{
+                width: 300px;
+                margin: 0px auto;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .cadinteiro input{
+                margin: 5px;
+                width: 100%;
+                padding: 5px 0;
+                background-color: #66cdaa;
+            }
+            .cadinteiro button{
+                width: 30%;
+                margin: 0 10%;
+                background-color: #b1ccf5;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            button:hover{
+                background-color: aliceblue;
+            }
+            label{
+                float: left;
+            }
+            h2{
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 10px;
+                font-size: 50px;
+            }
+                </style>
+            </head>
+            <body>
+                
+
+                <section>
+
+                    <h2>Exemplo - Exibe números inteiros - Estrutura "para...."(for())</h2>
+                    <font face ="arial">
+
+                        <form name="frmnumint" action="#" method="get" onsubmit="return validaProc()">
+                        <fieldset class="cadinteiro">
+
+                            <legend>Entrada de Dados</legend>
+                            <br>
+                            <button type="submit">Enviar</button>
+                            
+                        </fieldset>
+                    </form>
+
+                    </font>
+
+
+                </section>
+                <script>
+                    function validaProc(){
+
+                for(let i = 10; i>0; i--){
+                    console.log("Passou a "+i+"ª vez e o número é o: "+i);
+                }
+                return false;
+
+
+            }
+                </script>
+            </body>
+            </html>
 
             </textarea>
 
