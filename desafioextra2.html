@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Final Dev Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleexecut.css">
+</head>
+<body>
+
+    <nav class="menu-lateral">
+        <ul>
+            <li><a href="telainicial.html">TELA INICIAL</a></li>
+            <li><a href="index.html">INÍCIO</a></li>
+            
+            <li class="item-submenu">
+                <a href="#">CONDICIONAIS</a>
+                <ul class="sub-menu">
+                    <li><a href="condifelse.html">IF... ELSE</a></li>
+                    <li><a href="condswitchcase.html">SWITCH()... CASE</a></li>
+                </ul>
+            </li>
+
+            <li class="item-submenu">
+                <a href="#">REPETIÇÃO</a>
+                <ul class="sub-menu">
+                    <li><a href="repetwhile.html">WHILE</a></li>
+                    <li><a href="repetdowhile.html">DO... WHILE</a></li>
+                    <li><a href="repetfor.html">FOR</a></li>
+                </ul>
+            </li>
+
+            <li class="item-submenu">
+                <a href="#">ARRAY</a>
+                <ul class="sub-menu">
+                    <li><a href="vetor.html">VETOR</a></li>
+                    <li><a href="matriz.html">MATRIZ</a></li>
+                </ul>
+            </li>
+
+            <li class="item-submenu">
+                <a href="#">DESAFIOS</a>
+                <ul class="sub-menu">
+                    <li><a href="desafiovetores.html">DESAFIO VETOR</a></li>
+                    <li><a href="desafiomatriz.html">DESAFIO MATRIZ</a></li>
+                    <li><a href="desafioextramatriz.html">DESAFIO EXTRA MATRIZ</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="conteudo-principal">
+        <h1>Desafio Extra Matriz</h1>
+        <h2>Desafio 2</h2>
+
+        <p class="enunciado">
+            Faça um programa que peça os nomes dos 3 clientes e os valores das compras 
+            feitas por eles nos 03 últimos meses e calcule: <br> 
+            • A quantidade de compras;  <br>
+            • A média das compras, considerando essa quantidade. <br>
+            Após os cálculos serem efetuados, você deve exibir o menu a seguir ao usuário: <br>
+            • Ver compras de um cliente (permitir que o dono do supermercado consulte os 
+            valores das compras dos 3 meses, da média das compras e quantidade de compras 
+            de um cliente qualquer, consultando pelo seu nome);  <br>
+            • Ver todas as compras de todos os clientes (mostrar a tabela inteira com todos os 
+            valores). 
+        </p>
+
+        <div class="container-editor">
+
+            <textarea id="codigoInput">
+
+                <!DOCTYPE html>
+                <html lang="PT-BR">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Desafio Extra 2</title>
+                    <style>
+                        /*Configurações Gerais*/
+                        section{
+                            margin-top: 0px auto;
+
+                        }
+
+                        /*Configurações da página*/
+                        body{
+                            background-color: #0abab5;
+                            color: black;
+                        }
+                        .cadinteiro {
+                            width: 300px;
+                            margin: 0px auto;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        .cadinteiro input{
+                            margin: 5px;
+                            width: 100%;
+                            padding: 5px 0;
+                            background-color: #66cdaa;
+                        }
+                        .cadinteiro button{
+                            width: 30%;
+                            margin: 0 10%;
+                            background-color: #b1ccf5;
+                            font-weight: bold;
+                            font-size: 16px;
+                        }
+
+                        .resultado{
+                            width: 300px;
+                            margin: 0px auto;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+
+
+
+                        button:hover{
+                            background-color: aliceblue;
+                        }
+                        label{
+                            float: left;
+                        }
+                        h2{
+                            text-align: center;
+                            margin-top: 0px;
+                            margin-bottom: 10px;
+                            font-size: 50px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <section>
+                        <h2>Desafio Extra 2 - Controle de fiado supermercado Alegria!</h2>
+                        <font face="arial">
+                            <form name="frmnumint" id="#" method="get" onsubmit="return validaProc()">
+                                <fieldset class="cadinteiro">
+                                    <legend>Entrada de dados</legend>
+                                    <br>
+                                    <button type="submit">Enviar</button>
+                                </fieldset>
+                            </form>
+                        </font>
+                    </section>
+                    <script>
+                        function validaProc() {
+                            let nomes = [];
+                            let matriz = [];
+                            let linha = 3;
+                            let coluna = 3;
+                            let contador1 = 0;
+                            let contador2 = 0;
+                            let contador3 = 0;
+                            let total1 = 0;
+                            let total2 = 0;
+                            let total3 = 0;
+                            let media1 = 0;
+                            let media2 = 0;
+                            let media3 = 0;
+                            let opcao = "";
+
+                            alert("Seja bem vindo ao SuperMercado Alegria");
+
+                            for (let i = 0; i < 3; i++) {
+                                nomes[i] = prompt("Insira o nome do " + (i + 1) + "º cliente:");
+                            }
+
+                            alert("Para o mês que não houver compra, digite o valor 0");
+
+                            for (let i = 0; i < linha; i++) {
+                                matriz[i] = [];
+                                for (let c = 0; c < coluna; c++) {
+                                    matriz[i][c] = parseFloat(prompt("Insira o valor da compra do " + (c + 1) + "º mês do cliente " + nomes[i]));
+                                    if (i == 0) {
+                                        if (matriz[i][c] > 0) contador1++;
+                                        total1 = total1 + matriz[i][c];
+                                    } else if (i == 1) {
+                                        if (matriz[i][c] > 0) contador2++;
+                                        total2 = total2 + matriz[i][c];
+                                    } else if (i == 2) {
+                                        if (matriz[i][c] > 0) contador3++;
+                                        total3 = total3 + matriz[i][c];
+                                    }
+                                }
+                            }
+                            
+                            media1 = total1 / coluna;
+                            media2 = total2 / coluna;
+                            media3 = total3 / coluna;
+
+                            do {
+                                alert("Digite o nome do cliente que deseja realizar a consulta, digite 'geral' para visualizar tudo ou 'sair'.")
+                                opcao = prompt("Opção:");
+
+                                if (opcao.toUpperCase() === nomes[0].toUpperCase()) { 
+                                    console.log("-----------------------------------");
+                                    console.log("Cliente: " + nomes[0]);
+                                    console.log("Mês 1: R$ " + matriz[0][0].toFixed(2));
+                                    console.log("Mês 2: R$ " + matriz[0][1].toFixed(2));
+                                    console.log("Mês 3: R$ " + matriz[0][2].toFixed(2));
+                                    console.log("Média das compras: R$ " + media1.toFixed(2));
+                                    console.log("Total de compras: R$ " + total1.toFixed(2));
+                                    console.log("Quantidade de compras (meses com valor > 0): " + contador1);
+                                    console.log("-----------------------------------");
+                                } else if (opcao.toUpperCase() === nomes[1].toUpperCase()) {
+                                    console.log("-----------------------------------");
+                                    console.log("Cliente: " + nomes[1]);
+                                    console.log("Mês 1: R$ " + matriz[1][0].toFixed(2));
+                                    console.log("Mês 2: R$ " + matriz[1][1].toFixed(2));
+                                    console.log("Mês 3: R$ " + matriz[1][2].toFixed(2));
+                                    console.log("Média das compras: R$ " + media2.toFixed(2));
+                                    console.log("Total de compras: R$ " + total2.toFixed(2));
+                                    console.log("Quantidade de compras (meses com valor > 0): " + contador2);
+                                    console.log("-----------------------------------");
+                                } else if (opcao.toUpperCase() === nomes[2].toUpperCase()) {
+                                    console.log("-----------------------------------");
+                                    console.log("Cliente: " + nomes[2]);
+                                    console.log("Mês 1: R$ " + matriz[2][0].toFixed(2));
+                                    console.log("Mês 2: R$ " + matriz[2][1].toFixed(2));
+                                    console.log("Mês 3: R$ " + matriz[2][2].toFixed(2));
+                                    console.log("Média das compras: R$ " + media3.toFixed(2));
+                                    console.log("Total de compras: R$ " + total3.toFixed(2));
+                                    console.log("Quantidade de compras (meses com valor > 0): " + contador3);
+                                    console.log("-----------------------------------");
+
+                                } else if (opcao.toUpperCase() === 'GERAL') {
+                                    console.log("========= RELATÓRIO GERAL =========");
+
+                                    console.log("-----------------------------------");
+                                    console.log("Cliente: " + nomes[0]);
+                                    console.log("Mês 1: R$ " + matriz[0][0].toFixed(2));
+                                    console.log("Mês 2: R$ " + matriz[0][1].toFixed(2));
+                                    console.log("Mês 3: R$ " + matriz[0][2].toFixed(2));
+                                    console.log("Média das compras: R$ " + media1.toFixed(2));
+                                    console.log("Total de compras: R$ " + total1.toFixed(2));
+                                    console.log("Quantidade de compras (meses com valor > 0): " + contador1);
+                                    
+                                    console.log("-----------------------------------");
+                                    console.log("Cliente: " + nomes[1]);
+                                    console.log("Mês 1: R$ " + matriz[1][0].toFixed(2));
+                                    console.log("Mês 2: R$ " + matriz[1][1].toFixed(2));
+                                    console.log("Mês 3: R$ " + matriz[1][2].toFixed(2));
+                                    console.log("Média das compras: R$ " + media2.toFixed(2));
+                                    console.log("Total de compras: R$ " + total2.toFixed(2));
+                                    console.log("Quantidade de compras (meses com valor > 0): " + contador2);
+
+                                    console.log("-----------------------------------");
+                                    console.log("Cliente: " + nomes[2]);
+                                    console.log("Mês 1: R$ " + matriz[2][0].toFixed(2));
+                                    console.log("Mês 2: R$ " + matriz[2][1].toFixed(2));
+                                    console.log("Mês 3: R$ " + matriz[2][2].toFixed(2));
+                                    console.log("Média das compras: R$ " + media3.toFixed(2));
+                                    console.log("Total de compras: R$ " + total3.toFixed(2));
+                                    console.log("Quantidade de compras (meses com valor > 0): " + contador3);
+                                    console.log("-----------------------------------");
+                                } else if (opcao.toUpperCase() !== 'SAIR') {
+                                    alert("Opção inválida ou cliente não encontrado.");
+                                }
+
+                            } while (opcao.toUpperCase() !== 'SAIR');
+
+                            alert("Consulta finalizada.");
+                            
+                            return false;
+                        }
+                    </script>
+                </body>
+                </html>
+
+            </textarea>
+
+            <button id="executarBtn">Executar Código</button>
+        </div>
+    </main>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

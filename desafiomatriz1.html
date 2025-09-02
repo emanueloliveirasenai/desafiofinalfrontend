@@ -51,12 +51,15 @@
     </nav>
 
     <main class="conteudo-principal">
-        <h1>Matriz (Vetor Bidimensional)</h1>
-        <h2>Atividade 2</h2>
+        <h1>Desafio Matriz</h1>
+        <h2>Desafio 1</h2>
 
         <p class="enunciado">
-            Construa um algoritmo para ler uma matriz 2x2 de inteiros e imprimir 
-            a soma dos seus elementos de uma linha fornecida pelo usuário!
+            O síndico do prédio “Balança mais não cai” solicitou uma solução que armazene em 
+            uma matriz a renda de cada família moradora de um edifício, calculando a média e o 
+            total de renda do mesmo. O prédio possui 6 andares e quatro apartamentos por 
+            andar.
+            Neste código usei o Math.random() para criar aleatóriamente os números solicitados.
         </p>
 
         <div class="container-editor">
@@ -68,65 +71,65 @@
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Atividade 2</title>
+                    <title>Desafio 1</title>
                     <style>
                         /*Configurações Gerais*/
-                    section{
-                        margin-top: 0px auto;
+                        section{
+                            margin-top: 0px auto;
 
-                    }
+                        }
 
-                    /*Configurações da página*/
-                    body{
-                        background-color: #0abab5;
-                        color: black;
-                    }
-                    .cadinteiro {
-                        width: 300px;
-                        margin: 0px auto;
-                        font-weight: bold;
-                        margin-bottom: 10px;
-                    }
-                    .cadinteiro input{
-                        margin: 5px;
-                        width: 100%;
-                        padding: 5px 0;
-                        background-color: #66cdaa;
-                    }
-                    .cadinteiro button{
-                        width: 30%;
-                        margin: 0 10%;
-                        background-color: #b1ccf5;
-                        font-weight: bold;
-                        font-size: 16px;
-                    }
+                        /*Configurações da página*/
+                        body{
+                            background-color: #0abab5;
+                            color: black;
+                        }
+                        .cadinteiro {
+                            width: 300px;
+                            margin: 0px auto;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        .cadinteiro input{
+                            margin: 5px;
+                            width: 100%;
+                            padding: 5px 0;
+                            background-color: #66cdaa;
+                        }
+                        .cadinteiro button{
+                            width: 30%;
+                            margin: 0 10%;
+                            background-color: #b1ccf5;
+                            font-weight: bold;
+                            font-size: 16px;
+                        }
 
-                    .resultado{
-                        width: 300px;
-                        margin: 0px auto;
-                        font-weight: bold;
-                        margin-bottom: 10px;
-                    }
+                        .resultado{
+                            width: 300px;
+                            margin: 0px auto;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
 
 
 
-                    button:hover{
-                        background-color: aliceblue;
-                    }
-                    label{
-                        float: left;
-                    }
-                    h2{
-                        text-align: center;
-                        margin-top: 0px;
-                        margin-bottom: 10px;
-                        font-size: 50px;
-                    } 
+                        button:hover{
+                            background-color: aliceblue;
+                        }
+                        label{
+                            float: left;
+                        }
+                        h2{
+                            text-align: center;
+                            margin-top: 0px;
+                            margin-bottom: 10px;
+                            font-size: 50px;
+                        }
                     </style>
                 </head>
                 <body>
                     <section>
-                        <h2>Atividade 1 - Matriz (2x2) soma dos elementos</h2>
+                        <h2>Desafio 1 - Renda fixa e média do prédio.</h2>
                         <font face="arial">
                             <form name="frmnumint" id="#" method="get" onsubmit="return validaProc()">
                                 <fieldset class="cadinteiro">
@@ -138,30 +141,32 @@
                         </font>
                     </section>
                     <script>
-                                function validaProc() {
+                        function validaProc(){
+                            
                             let matriz = [];
-                            let linhas = 2;
-                            let colunas = 2;
-                            let acum = 0;
+                            let linha = 6;
+                            let coluna = 4;
+                            let rendaTotal = 0;
+                            let total = linha * coluna;
+                            let media = 0;
 
-                            for (let i = 0; i < linhas; i++) {
+                            for(i = 0; i < linha; i++){
                                 matriz[i] = [];
-                                for (let c = 0; c < colunas; c++) {
-                                    matriz[i][c] = parseInt(prompt("Insira o elemento da linha " + (i + 1) + ", coluna " + (c + 1) + ":"));
+                                for(c = 0; c < coluna; c++){
+                                    matriz[i][c] = Math.floor(Math.random() * 5000) + 1200;
+                                    rendaTotal = rendaTotal + matriz[i][c];
+                                    document.write("<br>Renda informada Ap " + (c+1) + " Andar " + (i+1) + " é: " + matriz[i][c]);
                                 }
+                                document.write("<br>")
                             }
 
-                            let linhaSoma = parseInt(prompt("Insira o número da linha que você deseja somar:"));
+                            media = rendaTotal / total;
 
-                            let numeroLinha = linhaSoma - 1;
-
-                            for (c = 0; c < colunas; c++) {
-                                acum = acum + matriz[numeroLinha][c];
-                            }
-
-                            console.log("A soma da linha " + linhaSoma + " é " + acum);
+                            document.write("<br>A renda total do prédio é: " + rendaTotal + "<br>");
+                            document.write("A renda média do prédio é: " + (media.toFixed(2)));
 
                             return false;
+
                         }
                     </script>
                 </body>

@@ -51,26 +51,28 @@
     </nav>
 
     <main class="conteudo-principal">
-        <h1>Matriz (Vetor Bidimensional)</h1>
-        <h2>Atividade 2</h2>
+        <h1>Desafio Vetor</h1>
+        <h2>Desafio 4</h2>
 
         <p class="enunciado">
-            Construa um algoritmo para ler uma matriz 2x2 de inteiros e imprimir 
-            a soma dos seus elementos de uma linha fornecida pelo usuário!
+            A empresa “ORDEM DECRESCENTE” necessita de uma solução que alimente um 
+            vetor com 4 valores numéricos inteiros. Como resultado deseja-se que imprima os 
+            valores na ordem inversa com que foram armazenadas, ou seja, do valor localizado 
+            na última posição para o valor localizado na primeira posição do vetor
         </p>
 
         <div class="container-editor">
 
             <textarea id="codigoInput">
 
-                <!DOCTYPE html>
-                <html lang="PT-BR">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Atividade 2</title>
-                    <style>
-                        /*Configurações Gerais*/
+            <!DOCTYPE html>
+            <html lang="PT-BR">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Desafio 4</title>
+                <style>
+                    /*Configurações Gerais*/
                     section{
                         margin-top: 0px auto;
 
@@ -121,51 +123,42 @@
                         margin-top: 0px;
                         margin-bottom: 10px;
                         font-size: 50px;
-                    } 
-                    </style>
-                </head>
-                <body>
-                    <section>
-                        <h2>Atividade 1 - Matriz (2x2) soma dos elementos</h2>
-                        <font face="arial">
-                            <form name="frmnumint" id="#" method="get" onsubmit="return validaProc()">
-                                <fieldset class="cadinteiro">
-                                    <legend>Entrada de dados</legend>
-                                    <br>
-                                    <button type="submit">Enviar</button>
-                                </fieldset>
-                            </form>
-                        </font>
-                    </section>
-                    <script>
-                                function validaProc() {
-                            let matriz = [];
-                            let linhas = 2;
-                            let colunas = 2;
-                            let acum = 0;
+                    }
+                </style>
+            </head>
+            <body>
+                <section>
+                    <h2>Desafio 4 - Impressão invertidas dos valores no</h2>
+                    <font face="arial">
+                        <form name="frmnumint" id="#" method="get" onsubmit="return validaProc()">
+                            <fieldset class="cadinteiro">
+                                <legend>Entrada de dados</legend>
+                                <br>
+                                <button type="submit">Enviar</button>
+                            </fieldset>
+                        </form>
+                    </font>
+                </section>
+                <script>
+                    function validaProc(){
 
-                            for (let i = 0; i < linhas; i++) {
-                                matriz[i] = [];
-                                for (let c = 0; c < colunas; c++) {
-                                    matriz[i][c] = parseInt(prompt("Insira o elemento da linha " + (i + 1) + ", coluna " + (c + 1) + ":"));
-                                }
-                            }
+                        let vetor = [];
+                        let i;
 
-                            let linhaSoma = parseInt(prompt("Insira o número da linha que você deseja somar:"));
-
-                            let numeroLinha = linhaSoma - 1;
-
-                            for (c = 0; c < colunas; c++) {
-                                acum = acum + matriz[numeroLinha][c];
-                            }
-
-                            console.log("A soma da linha " + linhaSoma + " é " + acum);
-
-                            return false;
+                        for(i = 0; i < 4; i++){
+                            vetor[i] = parseInt(prompt("Insira o " + (i+1) + "º Valor"))
+                            console.log("O número inserido na posição " + (i+1) + " do vetor é: " + vetor[i])
                         }
-                    </script>
-                </body>
-                </html>
+
+                        for(i = 3; i >= 0; i--){
+                            console.log("O número na posição " + (i+1) + " do vetor é " + vetor[i])
+                        }
+                        
+                        return false;
+                    }
+                </script>
+            </body>
+            </html>
 
             </textarea>
 

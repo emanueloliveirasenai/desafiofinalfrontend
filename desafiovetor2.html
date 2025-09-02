@@ -51,26 +51,29 @@
     </nav>
 
     <main class="conteudo-principal">
-        <h1>Matriz (Vetor Bidimensional)</h1>
-        <h2>Atividade 2</h2>
+        <h1>Desafio Vetor</h1>
+        <h2>Desafio 2</h2>
 
         <p class="enunciado">
-            Construa um algoritmo para ler uma matriz 2x2 de inteiros e imprimir 
-            a soma dos seus elementos de uma linha fornecida pelo usuário!
+            Professor “Ludovico Volpato” está de volta e deseja uma solução que alimente um 
+            vetor com 10 valores inteiros e também que solicite ao usuário a entrada de dados de 
+            um valor inteiro qualquer. A solução deverá fazer uma busca do valor, informado pelo 
+            usuário, no vetor e imprima a posição em que este foi encontrado ou se não foi 
+            encontrado.
         </p>
 
         <div class="container-editor">
 
             <textarea id="codigoInput">
 
-                <!DOCTYPE html>
-                <html lang="PT-BR">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Atividade 2</title>
-                    <style>
-                        /*Configurações Gerais*/
+            <!DOCTYPE html>
+            <html lang="PT-BR">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Desafio 2</title>
+                <style>
+                    /*Configurações Gerais*/
                     section{
                         margin-top: 0px auto;
 
@@ -121,51 +124,58 @@
                         margin-top: 0px;
                         margin-bottom: 10px;
                         font-size: 50px;
-                    } 
-                    </style>
-                </head>
-                <body>
-                    <section>
-                        <h2>Atividade 1 - Matriz (2x2) soma dos elementos</h2>
-                        <font face="arial">
-                            <form name="frmnumint" id="#" method="get" onsubmit="return validaProc()">
-                                <fieldset class="cadinteiro">
-                                    <legend>Entrada de dados</legend>
-                                    <br>
-                                    <button type="submit">Enviar</button>
-                                </fieldset>
-                            </form>
-                        </font>
-                    </section>
-                    <script>
-                                function validaProc() {
-                            let matriz = [];
-                            let linhas = 2;
-                            let colunas = 2;
-                            let acum = 0;
+                    }
+                </style>
+            </head>
+            <body>
+                <section>
+                    <h2>Desafio 2 - vetor de 10 posições</h2>
+                    <font face="arial">
+                        <form name="frmnumint" id="#" method="get" onsubmit="return validaProc()">
+                            <fieldset class="cadinteiro">
+                                <legend>Entrada de dados</legend>
+                                <br>
+                                <button type="submit">Enviar</button>
+                            </fieldset>
+                        </form>
+                    </font>
+                </section>
+                <script>
+                function validaProc(){
 
-                            for (let i = 0; i < linhas; i++) {
-                                matriz[i] = [];
-                                for (let c = 0; c < colunas; c++) {
-                                    matriz[i][c] = parseInt(prompt("Insira o elemento da linha " + (i + 1) + ", coluna " + (c + 1) + ":"));
-                                }
-                            }
+                    let vetor = [];
+                    let busca = 0;
+                    let i;
+                    let validacao = false;
+                    let posicao = 0;
 
-                            let linhaSoma = parseInt(prompt("Insira o número da linha que você deseja somar:"));
+                    for(i = 0; i < 10; i++){
+                        vetor[i] = parseInt(prompt("Insira o " + (i+1) + "º número: "));
+                        console.log("O valor inserido foi: " + vetor[i]);
+                    }
 
-                            let numeroLinha = linhaSoma - 1;
+                    while(validacao == false){
 
-                            for (c = 0; c < colunas; c++) {
-                                acum = acum + matriz[numeroLinha][c];
-                            }
+                        busca = parseInt(prompt("Digite o número que você deseja procurar no vetor: "));
 
-                            console.log("A soma da linha " + linhaSoma + " é " + acum);
-
-                            return false;
+                        for(i = 0; i < 10; i++){
+                        if(busca == vetor[i]){
+                            posicao = i;
+                            validacao = true;
                         }
-                    </script>
-                </body>
-                </html>
+                        }
+                        if(validacao == false){
+                            alert("Número não encontrado!")
+                        }
+                    }
+
+                    console.log("Número " + busca + " encontrado na posição " + posicao + " do vetor!")
+
+                    return false;
+                }
+                </script>
+            </body>
+            </html>
 
             </textarea>
 
